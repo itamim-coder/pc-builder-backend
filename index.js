@@ -1,8 +1,8 @@
+const express = require("express");
 const { MongoClient, ServerApiVersion } = require("mongodb");
 require("dotenv").config();
 const cors = require("cors");
 var ObjectId = require("mongodb").ObjectId;
-const express = require("express");
 
 
 const app = express();
@@ -23,7 +23,7 @@ const client = new MongoClient(uri, {
 
 const run = async () => {
   try {
-    await client.connect();
+    // await client.connect();
     const database = client.db("pc_builder");
     const categoriesCollection = database.collection("categories");
     const productsCollection = database.collection("products");
